@@ -7888,6 +7888,7 @@ This footprint was designed to help hold the alignment of a through-hole compone
 </text>
 <text x="165.1" y="175.26" size="1.27" layer="97">keypad only needs 7 gpio
 board can provide up to 8 gpio</text>
+<text x="91.44" y="109.22" size="1.27" layer="91">dddd</text>
 </plain>
 <instances>
 <instance part="JP3" gate="G$1" x="246.38" y="30.48"/>
