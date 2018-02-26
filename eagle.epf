@@ -1,0 +1,54 @@
+[Eagle]
+Version="07 07 00"
+Platform="Windows"
+Serial="6A0C6BA654-LSR-WLM30CP"
+Globals="Globals"
+Desktop="Desktop"
+
+[Globals]
+AutoSaveProject=1
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/LilyPad-Wearables.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/SparkFun-Aesthetics.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/SparkFun-Batteries.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/SparkFun-Boards.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/SparkFun-Capacitors.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/SparkFun-Clocks.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/SparkFun-Coils.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/SparkFun-Connectors.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/SparkFun-DiscreteSemi.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/SparkFun-Displays.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/SparkFun-Electromechanical.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/SparkFun-Fuses.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/SparkFun-GPS.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/SparkFun-Hardware.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/SparkFun-IC-Amplifiers.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/SparkFun-IC-Comms.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/SparkFun-IC-Conversion.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/SparkFun-IC-Logic.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/SparkFun-IC-Memory.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/SparkFun-IC-Microcontroller.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/SparkFun-IC-Power.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/SparkFun-IC-Special-Function.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/SparkFun-Jumpers.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/SparkFun-LED.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/SparkFun-PowerSymbols.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/SparkFun-RF.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/SparkFun-Resistors.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/SparkFun-Retired.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/SparkFun-Sensors.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/SparkFun-Switches.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/User-Submitted.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/attiny85.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/Projects/3_way_Jumper_Research/JUMPER-SMT_3_2-NC_PASTE_RESEARCH.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/Projects/Qwiic_Relay/LTV-816.lbr"
+UsedLibrary="C:/Users/kevin.kuwata/Dropbox/SparkFun-Eagle-Libraries-master/KevinKuwata_eagle.lbr"
+
+[Win_1]
+Type="Control Panel"
+Loc="381 63 2300 1079"
+State=2
+Number=0
+
+[Desktop]
+Screen="3840 1080"
+Window="Win_1"
