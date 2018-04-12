@@ -3,7 +3,7 @@
 
   Created May, 4th 2018
 
-  Author: Kevin Kuwat
+  Author: Kevin Kuwata
 */
 
 #include <Wire.h>
@@ -39,15 +39,21 @@ byte const qwiicGpioAddress = 0x27; //When all jumpers are closed A0, A1, A2
 #define SET_OUTPUT 		0x00
 #define SET_INPUT 		0x01
 
+//these should probably be pin0 through 7 because of the way the board is labeled. 
 #define PIN1			0b00000001
 #define PIN2			0b00000010
-#define PIN3			0b00000100 //Remember everything has to be offset by 1 zero indexed. 
-#define PIN4			00b0001000
+#define PIN3			0b00000100 
+#define PIN4			0b00001000
 #define PIN5 			0b00010000
 #define PIN6 			0b00100000
 #define PIN7 			0b01000000
 #define PIN8 			0b10000000
 
+#define ALL_PINS_OUTPTUS		0x00
+#define ALL_PINS_INPUTS			0xFF
+
+#define ALL_PINS_LOW			0x00
+#define ALL_PINS_HIGH			0xFF
 
 /*====================================================================================*//*====================================================================================*/
 // Setup
@@ -72,6 +78,8 @@ void setPinMode(byte address, byte pin, byte direction){
 	Wire.write(REGISTER_CONFIURATION);
 	byte currentPinDirection = readRegister(address, REGISTER_CONFIURATION);
 
+		pin =  actualPinBits(pin);
+	
   if(direction == SET_INPUT){
 		currentPinDirection |= pin; // pin will come in correctly masked because of a define. 
   }
@@ -82,30 +90,63 @@ void setPinMode(byte address, byte pin, byte direction){
   		writeRegister(address, REGISTER_CONFIURATION, currentPinDirection );
 }
 
+/*
+	actualPinBits takes in the desired pin in decimal and returns the bit
+	pattern used for masking
+*/
+byte actualPinBits(byte desiredPin){
+	switch(desiredPin){
+		case 1:
+		return PIN1;
+		
+		case 2:
+		return PIN2;
+		
+		case 3:
+		return PIN3;
+		
+		case 4:
+		return PIN4;
+		
+		case 5:
+		return PIN5;
+		
+		case 6:
+		return PIN6;
+		
+		case 7:
+		return PIN7;
+		
+		case 8:
+		return PIN8;
+	}
+}
+
 
 /*
 	setPinOutput() will set a pin as high or low
 	input: address of the Qwiic GPIO 
 		   pin, the pin you wish to control
-		   level, the logic level HIGH or LOW.
+		   state, the logic level HIGH or LOW.
 		   	
-			similar to digitalWrite()
+			similar to digitalWrite(pin, state)
 
 */
-void setPinOutput(byte address, byte pin, byte level){
-	byte currentRegisterValue = 0;
-	
+void setPinOutput(byte address, byte pin, byte state){	
 	Wire.beginTransmission(address);
 	Wire.write(REGISTER_OUTPUT_PORT);
 	Wire.endTransmission(false);
 	Wire.requestFrom(address, 1);
 	
-	currentRegisterValue = readRegister(address, REGISTER_OUTPUT_PORT);
+	//interpret pin number like 5 as 0b00010000 and not 0b0101
+	pin =  actualPinBits(pin);
 	
-	if(level == LOW){ //INVERSE OF ARDUINO, but this will result in the same effect a user would expect. 
+	byte currentRegisterValue = readRegister(address, REGISTER_OUTPUT_PORT);
+	
+	if(state == LOW){ //INVERSE OF ARDUINO, but this will result in the same effect a user would expect. 
 		currentRegisterValue |= pin;
 	}
-	else if(level == HIGH){
+	else if(state == HIGH){
 		currentRegisterValue &= ~pin;
 	}
 	
@@ -119,88 +160,56 @@ void setPinOutput(byte address, byte pin, byte level){
 */
 byte readPin(byte address, byte pin){
 	byte currentRegisterValue = readRegister( address, REGISTER_INPUT_PORT);
-	
-	return currentRegisterValue;
-	
-	/* this isn't working the way i thought, probably need to do a case statement and
-	do a shift
-	*/
-	
-	/*
-	if(pin & currentRegisterValue == 1){
-	return 1;
-	}
-	else if(pin & currentRegisterValue == 0){
-	return 0;
-	}
-	else{
-		return 53;
-	}
-	*/
-	/*
-	
+
 	switch(pin){
-		/*case PIN1: 
+		case 1: 
+		currentRegisterValue &= BIT0; 
 		currentRegisterValue >>= 0;
-		return currentRegisterValue & PIN1;
-		break;
+		return currentRegisterValue; //FINAL RESULT 0 OR 1
 		
-		case PIN2: 
+		case 2: 
+		currentRegisterValue &= BIT1; 
 		currentRegisterValue >>= 1;
-		return currentRegisterValue & PIN2;
-		break;
+		return currentRegisterValue; 
 		
-		case PIN3: 
+		case 3: 
+		currentRegisterValue &= BIT2; 
 		currentRegisterValue >>= 2;
-		return currentRegisterValue & PIN3;
-		break;
+		return currentRegisterValue; 
 		
-		case PIN4: 
+		case 4: 
+		currentRegisterValue &= BIT3;
 		currentRegisterValue >>= 3;
-		return currentRegisterValue & PIN4;
-		break;
+		return currentRegisterValue; 
 		
-		case PIN5: 
-	//	currentRegisterValue >>= 4;
-		if(currentRegisterValue & PIN5)return 64;
-		else{
-			return 60;
-		}
-		break;
-		
-		
-		
-		case PIN6: 
+		case 5: 
+		currentRegisterValue &= BIT4; 
+		currentRegisterValue >>= 4;
+		return currentRegisterValue; 
+
+		case 6: 
+		currentRegisterValue &= BIT5; 
 		currentRegisterValue >>= 5;
-		return currentRegisterValue & PIN6;
-		break;
+		return currentRegisterValue; 
 		
-		case PIN7: 
+		case 7: 
+		currentRegisterValue &= BIT6; 
 		currentRegisterValue >>= 6;
-		return currentRegisterValue & PIN7;
-		break;
+		return currentRegisterValue; 
 		
-		case PIN8: 
+		case 8: 
+		currentRegisterValue &= BIT7; 
 		currentRegisterValue >>= 7;
-		return currentRegisterValue;
-		//return 44;
-		//return( currentRegisterValue & PIN8);
-		break;
+		return currentRegisterValue; 
 	
 		default:
-		return 53;
+		return 53; //JUST FOR ERROR CHECKING RN
 		break;
 	
-	}
-	*/
-	
-	
-	
-	//do a shift? or mask it out? similar to checking interrupt flag for gpio?
-	
+	}	
 }
 
-//read the inputs
+//read all the inputs
 	/*
 		* write to the address
 		* write the register address:  REGISTER_INPUT_PORT
@@ -237,92 +246,78 @@ void setup(){
 
 	testForConnectivity();
 	
-/*	//set pins 1,2, 6, 7 as outputs
-	setPinMode(qwiicGpioAddress, PIN1, SET_OUTPUT);
-	setPinMode(qwiicGpioAddress, PIN2, SET_OUTPUT);
+	//set all outputs as off, inputs are unaffected
+	setAllPinsState(qwiicGpioAddress, LOW);
 	
-	setPinMode(qwiicGpioAddress, PIN6, SET_OUTPUT);
-	setPinMode(qwiicGpioAddress, PIN7, SET_OUTPUT);
+	setPinMode(qwiicGpioAddress, 7, SET_OUTPUT);
+	setPinMode(qwiicGpioAddress, 5, SET_OUTPUT);
+	setPinMode(qwiicGpioAddress, 3, SET_OUTPUT);
+	setPinMode(qwiicGpioAddress, 4, SET_OUTPUT);
+	setPinMode(qwiicGpioAddress, 2, SET_OUTPUT);
+	
+	//set pins 6 and 8 as input
+	setPinMode(qwiicGpioAddress, 6, SET_INPUT);
+	setPinMode(qwiicGpioAddress, 8, SET_INPUT);
 	
 	//Set outputs as low
-	setPinOutput(qwiicGpioAddress, PIN1, LOW);
-	setPinOutput(qwiicGpioAddress, PIN2, LOW);
-
-	setPinOutput(qwiicGpioAddress, PIN6, LOW);
-	setPinOutput(qwiicGpioAddress, PIN7, LOW);
-	*/
-	
-	//set pins 5 and 8 as input
-	setPinMode(qwiicGpioAddress, PIN6, SET_INPUT);
-	setPinMode(qwiicGpioAddress, PIN8, SET_INPUT);
+	setPinOutput(qwiicGpioAddress, 7, LOW);
+	setPinOutput(qwiicGpioAddress, 5, LOW);
+	setPinOutput(qwiicGpioAddress, 4, LOW);
+	setPinOutput(qwiicGpioAddress, 3, LOW);
+	setPinOutput(qwiicGpioAddress, 2, LOW);
 }
-
 
 void loop(){
 	
-	byte currentRegisterValue = readRegister( qwiicGpioAddress, REGISTER_INPUT_PORT);
-
-	/*if(~(currentRegisterValue & PIN6)){
-		Serial.print(currentRegisterValue,BIN);
-		Serial.println("             testtt");
-	}
-	*/
 	
-	//really gross.
-	Serial.print("******");
+	
+	
+	while(readPin(qwiicGpioAddress, 6) == 0){
+		setPinOutput(qwiicGpioAddress, 2, HIGH);
+		setPinOutput(qwiicGpioAddress, 5, HIGH);
+		delay(50);
+		setPinOutput(qwiicGpioAddress, 2, LOW);
+		delay(50);
+	}	
+	
+	setPinOutput(qwiicGpioAddress, 3, HIGH);
+	setPinOutput(qwiicGpioAddress, 4, HIGH);
+	delay(100);
+	setPinOutput(qwiicGpioAddress, 3, LOW);
+	setPinOutput(qwiicGpioAddress, 4, LOW);
+	delay(100);
+	
+	while(readPin(qwiicGpioAddress, 8) == 0){
+		setPinOutput(qwiicGpioAddress, 2, LOW);
+		setPinOutput(qwiicGpioAddress, 5, LOW);
+		setPinOutput(qwiicGpioAddress, 7, HIGH);
+		delay(75);
+		setPinOutput(qwiicGpioAddress, 7, LOW);
+		delay(75);
+	}	
+
+	
+		/*setPinOutput(qwiicGpioAddress, 4, HIGH);
+		delay(200);
+		setPinOutput(qwiicGpioAddress, 4, LOW);
+		delay(200);
+*/
+/*
+	Serial.print("original read register: ");
+	Serial.print(currentRegisterValue, BIN);
+	Serial.print("  ---- masked -----      ");
 	currentRegisterValue = currentRegisterValue & PIN6;
 	Serial.print(currentRegisterValue, BIN);
-	Serial.print("               >>>>>>>>>>>      ");
-	currentRegisterValue >>=5;
+	Serial.print(">>>>>> shifted >>>>>       ");
+	currentRegisterValue >>= 5; //one less than the pin number
 	Serial.print(currentRegisterValue, BIN);
-	Serial.println("******");
-	/*if(currentRegisterValue & PIN5){
-		Serial.println("wooooo");
-	}
-	*/
-	if(currentRegisterValue & PIN8){
-		Serial.print(currentRegisterValue, BIN);
-		Serial.println("          5353");
-	}
-	
-	/*
-	byte value = readPin(qwiicGpioAddress, PIN5);
-	Serial.println(value, BIN);
-	delay(50);
-	
-	value = readPin(qwiicGpioAddress, PIN8);
-	Serial.println(value, BIN);
-	delay(50);
-	
-	while(readPin(qwiicGpioAddress, PIN8) == 1){
-	setPinOutput(qwiicGpioAddress, PIN1, HIGH);
-	setPinOutput(qwiicGpioAddress, PIN2, LOW);
-	delay(100);
-	setPinOutput(qwiicGpioAddress, PIN1, LOW);
-	setPinOutput(qwiicGpioAddress, PIN2, HIGH);
-	delay(100);
-	
-	byte value = readPin(qwiicGpioAddress, PIN5);
-	Serial.println(value, BIN);
-	delay(50);
-	
-	value = readPin(qwiicGpioAddress, PIN8);
-	Serial.println(value, BIN);
-	delay(50);
-	}
-	
-	setPinOutput(qwiicGpioAddress, PIN6, LOW);
-	delay(20);
-	
-	setPinOutput(qwiicGpioAddress, PIN6, HIGH);
-	setPinOutput(qwiicGpioAddress, PIN7, LOW);
-	delay(20);
-	
-	setPinOutput(qwiicGpioAddress, PIN7, HIGH);
-	delay(20);
-	
+	Serial.print("  final ------>   ");
+	Serial.println(currentRegisterValue, BIN);
 	
 	*/
+	
+	
+
 }
 #endif
 
@@ -398,7 +393,7 @@ void loop(){
 #endif
 
   
-#ifdef READINPUT
+#ifdef READINPUT //read input register thats it.
 
 void setup() {
   // put your setup code here, to run once:
@@ -536,8 +531,34 @@ void writeRegister(byte address, byte registerToWrite, byte valueToWrite){
 	Wire.endTransmission();
 }
 
+/*
+	setAllPinsDirection set all as output or input
+	use #define for direction: SET_INPUT or SET_OUTPUT
+*/
+void setAllPinsDirection(byte address, byte direction){
+	if(direction == SET_OUTPUT){
+		writeRegister(address, REGISTER_CONFIURATION, ALL_PINS_OUTPTUS);
+	}
+	else{
+		writeRegister(address, REGISTER_CONFIURATION, ALL_PINS_INPUTS);
+	}
+}
 
+/*
+	setAllPinsState set all as HIGH or LOW	
+*/
+void setAllPinsState(byte address, byte state){
+	if(state == HIGH){
+		//writeRegister(address, REGISTER_OUTPUT_PORT, ALL_PINS_HIGH);
+				writeRegister(address, REGISTER_OUTPUT_PORT, 0x00);
 
+	}
+	else{
+		//writeRegister(address, REGISTER_OUTPUT_PORT, ALL_PINS_LOW);
+						writeRegister(address, REGISTER_OUTPUT_PORT, 0XFF);
+
+	}
+}
 
 /*
   Send data to slave
