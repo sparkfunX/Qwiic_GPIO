@@ -1,18 +1,17 @@
 /******************************************************************************
-  Qwiic Relay Example 1 - Write GPIO
+  Qwiic Relay Example 3 - Interrupts
   Kevin Kuwata @ SparkX
   April 17, 2018
   https://github.com/sparkfunX/Qwiic_GPIO
   Arduino 1.8.5
 
-  This sketch sets up a GPIO 0 as an output and toggles
-  the output HIGH and LOW. 
-  
-  This device sinks current. When an output is LOW then current will flow. 
-  This logic has been taken care of for the user, thus the function 
-  setPinOutput will act like digitalWrite.
-   
+  This example notifies the user when an interrupt occurs. Interrupts
+  can only occur on pins that are configured as inputs. 
 
+  The interrupt pin is active low - when an interrupt occurs the pin 
+  goes to LOW.
+   
+  An external pull up may be required. 
 ******************************************************************************/
 
 #include <Wire.h>
@@ -61,16 +60,22 @@ void setup(){
 
 	testForConnectivity();
 	
-	setPinMode(qwiicGpioAddress, 0, SET_OUTPUT);
-	setPinOutput(qwiicGpioAddress, 0, LOW);
+	setPinMode(qwiicGpioAddress, 7, SET_INPUT);
+
+	pinMode(8, INPUT);
+	digitalWrite(8, HIGH); // Internal pull up
+	
+	pinMode(13, OUTPUT);
+	digitalWrite(13, LOW);
 }
 
 void loop(){
-	setPinOutput(qwiicGpioAddress, 0, HIGH);
-	delay(1000);
-	setPinOutput(qwiicGpioAddress, 0, LOW);
-	delay(4000);
+	while(digitalRead(8) == LOW)){
+		Serial.println("interrupt occurred");
+		delay(250);
+	}
 }
+
 
 
 

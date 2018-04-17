@@ -1,16 +1,13 @@
 /******************************************************************************
-  Qwiic Relay Example 1 - Write GPIO
+  Qwiic Relay Example 2 - Read GPIO
   Kevin Kuwata @ SparkX
   April 17, 2018
   https://github.com/sparkfunX/Qwiic_GPIO
   Arduino 1.8.5
 
-  This sketch sets up a GPIO 0 as an output and toggles
-  the output HIGH and LOW. 
+  This sketch sets up a GPIO 5 as an input and makes GPIO 0 an output. 
   
-  This device sinks current. When an output is LOW then current will flow. 
-  This logic has been taken care of for the user, thus the function 
-  setPinOutput will act like digitalWrite.
+  When the GPIO 5 is read LOW, GPIO 0 is set to HIGH.
    
 
 ******************************************************************************/
@@ -62,16 +59,23 @@ void setup(){
 	testForConnectivity();
 	
 	setPinMode(qwiicGpioAddress, 0, SET_OUTPUT);
-	setPinOutput(qwiicGpioAddress, 0, LOW);
+	setPinOutput(qwiicGpioAddress, 0, HIGH);
+	
+	setPinMode(qwiicGpioAddress, 7, SET_INPUT);
 }
+
 
 void loop(){
-	setPinOutput(qwiicGpioAddress, 0, HIGH);
-	delay(1000);
+	
+	while(readPin(qwiicGpioAddress, 7) == 0){
+		setPinOutput(qwiicGpioAddress, 0, HIGH);
+		Serial.println("Button Pressed");
+		delay(100);
+	}	
 	setPinOutput(qwiicGpioAddress, 0, LOW);
-	delay(4000);
 }
 
+/* ============================================================ */
 
 
 
