@@ -8314,9 +8314,11 @@ board can provide up to 8 gpio</text>
 <segment>
 <pinref part="U3" gate="U1" pin="SDA"/>
 <wire x1="121.92" y1="137.16" x2="149.86" y2="137.16" width="0.1524" layer="91"/>
-<label x="149.86" y="137.16" size="1.27" layer="95" xref="yes"/>
+<label x="152.4" y="137.16" size="1.27" layer="95" xref="yes"/>
 <pinref part="R2" gate="G$1" pin="1"/>
-<wire x1="149.86" y1="137.16" x2="149.86" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="149.86" y1="137.16" x2="152.4" y2="137.16" width="0.1524" layer="91"/>
+<wire x1="149.86" y1="139.7" x2="149.86" y2="137.16" width="0.1524" layer="91"/>
+<junction x="149.86" y="137.16"/>
 </segment>
 <segment>
 <pinref part="J3" gate="G$1" pin="SDA"/>
@@ -8338,9 +8340,9 @@ board can provide up to 8 gpio</text>
 <segment>
 <pinref part="U3" gate="U1" pin="SCL"/>
 <wire x1="121.92" y1="134.62" x2="134.62" y2="134.62" width="0.1524" layer="91"/>
-<label x="144.78" y="134.62" size="1.27" layer="95" xref="yes"/>
+<label x="137.16" y="134.62" size="1.27" layer="95" xref="yes"/>
 <pinref part="R4" gate="G$1" pin="1"/>
-<wire x1="134.62" y1="134.62" x2="144.78" y2="134.62" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="134.62" x2="137.16" y2="134.62" width="0.1524" layer="91"/>
 <wire x1="134.62" y1="139.7" x2="134.62" y2="134.62" width="0.1524" layer="91"/>
 <junction x="134.62" y="134.62"/>
 </segment>
