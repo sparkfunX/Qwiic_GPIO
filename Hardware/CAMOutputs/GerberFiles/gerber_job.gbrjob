@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "Comment": "All values are metric (mm)",
+        "CreationDate": "2020-01-29T17:33:10Z",
+        "GenerationSoftware": {
+            "Application": "EAGLE",
+            "Vendor": "Autodesk",
+            "Version": "9.4.2"
+        },
+        "Part": "Single"
+    },
+    "Overall": {
+        "BoardThickness": 1.57,
+        "LayerNumber": 2,
+        "Name": {
+            "ProjectId": "Qwiic_GPIO"
+        },
+        "Owner": "Priyanka Makin <priyanka.makin@sparkfun.com>",
+        "Size": {
+            "X": 38.1,
+            "Y": 38.1
+        }
+    }
+}
