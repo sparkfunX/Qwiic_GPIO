@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.5.2">
+<eagle version="9.4.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
@@ -200,11 +200,6 @@ This is the mechanical footprint for a #4 phillips button head screw. Use the ke
 </package>
 </packages>
 <symbols>
-<symbol name="GND">
-<wire x1="-1.905" y1="0" x2="1.905" y2="0" width="0.254" layer="94"/>
-<text x="-2.54" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="GND" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
-</symbol>
 <symbol name="STAND-OFF">
 <circle x="0" y="0" radius="1.27" width="0.254" layer="94"/>
 </symbol>
@@ -215,19 +210,6 @@ This is the mechanical footprint for a #4 phillips button head screw. Use the ke
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="GND" prefix="GND">
-<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
-<gates>
-<gate name="1" symbol="GND" x="0" y="0"/>
-</gates>
-<devices>
-<device name="">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="STAND-OFF" prefix="JP">
 <description>&lt;b&gt;Stand Off&lt;/b&gt;&lt;p&gt;
 This is the mechanical footprint for a #4 phillips button head screw. Use the keepout ring to avoid running the screw head into surrounding components. SKU : PRT-00447</description>
@@ -8649,18 +8631,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="JP6" library="SparkFun" deviceset="FIDUCIAL" device="1X2" value="FIDUCIAL1X2"/>
 <part name="SUPPLY4" library="SparkFun-PowerSymbols" deviceset="3.3V" device=""/>
 <part name="SUPPLY5" library="SparkFun-PowerSymbols" deviceset="3.3V" device=""/>
-<part name="GND4" library="SparkFun" deviceset="GND" device=""/>
 <part name="J2" library="SparkX" deviceset="I2C_STANDARD" device="JS-1MM" value="SMD"/>
-<part name="GND6" library="SparkFun" deviceset="GND" device=""/>
 <part name="SUPPLY7" library="SparkFun-PowerSymbols" deviceset="3.3V" device=""/>
 <part name="J3" library="SparkX" deviceset="I2C_STANDARD" device="_NO_SILK" value="PTH"/>
-<part name="GND7" library="SparkFun" deviceset="GND" device=""/>
 <part name="FRAME1" library="SparkFun-Aesthetics" deviceset="FRAME-LETTER" device=""/>
 <part name="U$2" library="SparkX" deviceset="SPARKX-LOGO" device="3" value="SPARKX-LOGO3"/>
 <part name="C4" library="SparkFun-Capacitors" deviceset="0.1UF" device="-0603-25V-(+80/-20%)" value="0.1uF"/>
 <part name="SUPPLY8" library="SparkFun-PowerSymbols" deviceset="3.3V" device=""/>
 <part name="J4" library="SparkX" deviceset="I2C_STANDARD" device="JS-1MM" value="SMD"/>
-<part name="GND8" library="SparkFun" deviceset="GND" device=""/>
 <part name="LOGO1" library="SparkFun-Aesthetics" deviceset="OSHW-LOGO" device="MINI"/>
 <part name="U$1" library="SparkX" deviceset="SPARKX-LOGO" device="3" value="SPARKX-LOGO3"/>
 <part name="R2" library="SparkFun-Resistors" deviceset="2.2KOHM" device="-0603-1/10W-1%" value="2.2k"/>
@@ -8671,9 +8649,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="R1" library="SparkFun-Resistors" deviceset="2.2KOHM" device="-0603-1/10W-1%" value="2.2k"/>
 <part name="R3" library="SparkFun-Resistors" deviceset="2.2KOHM" device="-0603-1/10W-1%" value="2.2k"/>
 <part name="R5" library="SparkFun-Resistors" deviceset="2.2KOHM" device="-0603-1/10W-1%" value="2.2k"/>
-<part name="GND1" library="SparkFun" deviceset="GND" device=""/>
-<part name="GND2" library="SparkFun" deviceset="GND" device=""/>
-<part name="GND3" library="SparkFun" deviceset="GND" device=""/>
 <part name="SUPPLY2" library="SparkFun-PowerSymbols" deviceset="3.3V" device=""/>
 <part name="SUPPLY3" library="SparkFun-PowerSymbols" deviceset="3.3V" device=""/>
 <part name="SUPPLY6" library="SparkFun-PowerSymbols" deviceset="3.3V" device=""/>
@@ -8696,6 +8671,13 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="JP1" library="SparkFun-Jumpers" deviceset="JUMPER-SMT_2_NC_TRACE" device="_SILK" package3d_urn="urn:adsk.eagle:package:39281/1" value=""/>
 <part name="JP5" library="SparkFun-Jumpers" deviceset="JUMPER-SMT_2_NC_TRACE" device="_SILK" package3d_urn="urn:adsk.eagle:package:39281/1" value=""/>
 <part name="JP7" library="SparkFun-Jumpers" deviceset="JUMPER-SMT_2_NC_TRACE" device="_SILK" package3d_urn="urn:adsk.eagle:package:39281/1" value=""/>
+<part name="GND1" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
+<part name="GND2" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
+<part name="GND3" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
+<part name="GND4" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
+<part name="GND5" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
+<part name="GND6" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
+<part name="GND7" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -8771,15 +8753,9 @@ When no jumpers are cut</text>
 <instance part="SUPPLY5" gate="G$1" x="154.94" y="134.62" smashed="yes">
 <attribute name="VALUE" x="154.94" y="137.414" size="1.778" layer="96" align="bottom-center"/>
 </instance>
-<instance part="GND4" gate="1" x="154.94" y="119.38" smashed="yes">
-<attribute name="VALUE" x="152.4" y="116.84" size="1.778" layer="96"/>
-</instance>
 <instance part="J2" gate="G$1" x="93.98" y="96.52" smashed="yes">
 <attribute name="VALUE" x="88.9" y="91.186" size="1.778" layer="96" font="vector" align="top-left"/>
 <attribute name="NAME" x="88.9" y="104.394" size="1.778" layer="95" font="vector"/>
-</instance>
-<instance part="GND6" gate="1" x="104.14" y="88.9" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="106.68" y="86.36" size="1.778" layer="96" rot="MR0"/>
 </instance>
 <instance part="SUPPLY7" gate="G$1" x="71.12" y="104.14" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="71.12" y="106.934" size="1.778" layer="96" rot="MR0" align="bottom-center"/>
@@ -8787,9 +8763,6 @@ When no jumpers are cut</text>
 <instance part="J3" gate="G$1" x="60.96" y="96.52" smashed="yes">
 <attribute name="VALUE" x="55.88" y="91.186" size="1.778" layer="96" font="vector" align="top-left"/>
 <attribute name="NAME" x="55.88" y="104.394" size="1.778" layer="95" font="vector"/>
-</instance>
-<instance part="GND7" gate="1" x="71.12" y="88.9" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="73.66" y="86.36" size="1.778" layer="96" rot="MR0"/>
 </instance>
 <instance part="FRAME1" gate="G$1" x="0" y="0" smashed="yes"/>
 <instance part="FRAME1" gate="V" x="147.32" y="0" smashed="yes">
@@ -8808,9 +8781,6 @@ When no jumpers are cut</text>
 <instance part="J4" gate="G$1" x="25.4" y="96.52" smashed="yes">
 <attribute name="VALUE" x="20.32" y="91.186" size="1.778" layer="96" font="vector" align="top-left"/>
 <attribute name="NAME" x="20.32" y="104.394" size="1.778" layer="95" font="vector"/>
-</instance>
-<instance part="GND8" gate="1" x="35.56" y="88.9" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="38.1" y="86.36" size="1.778" layer="96" rot="MR0"/>
 </instance>
 <instance part="LOGO1" gate="G$1" x="170.18" y="48.26" smashed="yes"/>
 <instance part="U$1" gate="G$1" x="231.14" y="43.18" smashed="yes"/>
@@ -8844,15 +8814,6 @@ When no jumpers are cut</text>
 <instance part="R5" gate="G$1" x="48.26" y="27.94" smashed="yes" rot="R90">
 <attribute name="NAME" x="46.736" y="27.94" size="1.778" layer="95" font="vector" rot="R90" align="bottom-center"/>
 <attribute name="VALUE" x="49.784" y="27.94" size="1.778" layer="96" font="vector" rot="R90" align="top-center"/>
-</instance>
-<instance part="GND1" gate="1" x="12.7" y="17.78" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="15.24" y="15.24" size="1.778" layer="96" rot="MR0"/>
-</instance>
-<instance part="GND2" gate="1" x="30.48" y="17.78" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="33.02" y="15.24" size="1.778" layer="96" rot="MR0"/>
-</instance>
-<instance part="GND3" gate="1" x="48.26" y="17.78" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="50.8" y="15.24" size="1.778" layer="96" rot="MR0"/>
 </instance>
 <instance part="SUPPLY2" gate="G$1" x="12.7" y="50.8" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="12.7" y="53.594" size="1.778" layer="96" rot="MR0" align="bottom-center"/>
@@ -8917,6 +8878,27 @@ When no jumpers are cut</text>
 <instance part="JP7" gate="G$1" x="12.7" y="43.18" smashed="yes" rot="R90">
 <attribute name="NAME" x="10.16" y="40.64" size="1.778" layer="95" font="vector" rot="R90"/>
 <attribute name="VALUE" x="15.24" y="40.64" size="1.778" layer="96" font="vector" rot="R90" align="top-left"/>
+</instance>
+<instance part="GND1" gate="1" x="12.7" y="17.78" smashed="yes">
+<attribute name="VALUE" x="12.7" y="17.526" size="1.778" layer="96" align="top-center"/>
+</instance>
+<instance part="GND2" gate="1" x="30.48" y="17.78" smashed="yes">
+<attribute name="VALUE" x="30.48" y="17.526" size="1.778" layer="96" align="top-center"/>
+</instance>
+<instance part="GND3" gate="1" x="48.26" y="17.78" smashed="yes">
+<attribute name="VALUE" x="48.26" y="17.526" size="1.778" layer="96" align="top-center"/>
+</instance>
+<instance part="GND4" gate="1" x="35.56" y="88.9" smashed="yes">
+<attribute name="VALUE" x="35.56" y="88.646" size="1.778" layer="96" align="top-center"/>
+</instance>
+<instance part="GND5" gate="1" x="71.12" y="88.9" smashed="yes">
+<attribute name="VALUE" x="71.12" y="88.646" size="1.778" layer="96" align="top-center"/>
+</instance>
+<instance part="GND6" gate="1" x="104.14" y="88.9" smashed="yes">
+<attribute name="VALUE" x="104.14" y="88.646" size="1.778" layer="96" align="top-center"/>
+</instance>
+<instance part="GND7" gate="1" x="154.94" y="119.38" smashed="yes">
+<attribute name="VALUE" x="154.94" y="119.126" size="1.778" layer="96" align="top-center"/>
 </instance>
 </instances>
 <busses>
@@ -8992,44 +8974,6 @@ When no jumpers are cut</text>
 </net>
 <net name="GND" class="0">
 <segment>
-<wire x1="154.94" y1="124.46" x2="154.94" y2="121.92" width="0.1524" layer="91"/>
-<pinref part="GND4" gate="1" pin="GND"/>
-<pinref part="C4" gate="G$1" pin="2"/>
-</segment>
-<segment>
-<pinref part="J2" gate="G$1" pin="GND"/>
-<wire x1="101.6" y1="93.98" x2="104.14" y2="93.98" width="0.1524" layer="91"/>
-<wire x1="104.14" y1="93.98" x2="104.14" y2="91.44" width="0.1524" layer="91"/>
-<pinref part="GND6" gate="1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="J3" gate="G$1" pin="GND"/>
-<wire x1="68.58" y1="93.98" x2="71.12" y2="93.98" width="0.1524" layer="91"/>
-<wire x1="71.12" y1="93.98" x2="71.12" y2="91.44" width="0.1524" layer="91"/>
-<pinref part="GND7" gate="1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="J4" gate="G$1" pin="GND"/>
-<wire x1="33.02" y1="93.98" x2="35.56" y2="93.98" width="0.1524" layer="91"/>
-<wire x1="35.56" y1="93.98" x2="35.56" y2="91.44" width="0.1524" layer="91"/>
-<pinref part="GND8" gate="1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="R1" gate="G$1" pin="1"/>
-<wire x1="12.7" y1="22.86" x2="12.7" y2="20.32" width="0.1524" layer="91"/>
-<pinref part="GND1" gate="1" pin="GND"/>
-</segment>
-<segment>
-<wire x1="30.48" y1="22.86" x2="30.48" y2="20.32" width="0.1524" layer="91"/>
-<pinref part="GND2" gate="1" pin="GND"/>
-<pinref part="R3" gate="G$1" pin="1"/>
-</segment>
-<segment>
-<wire x1="48.26" y1="22.86" x2="48.26" y2="20.32" width="0.1524" layer="91"/>
-<pinref part="GND3" gate="1" pin="GND"/>
-<pinref part="R5" gate="G$1" pin="1"/>
-</segment>
-<segment>
 <wire x1="20.32" y1="152.4" x2="22.86" y2="152.4" width="0.1524" layer="91"/>
 <wire x1="22.86" y1="152.4" x2="22.86" y2="149.86" width="0.1524" layer="91"/>
 <pinref part="GND9" gate="1" pin="GND"/>
@@ -9046,6 +8990,44 @@ When no jumpers are cut</text>
 <wire x1="177.8" y1="99.06" x2="175.26" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="175.26" y1="99.06" x2="175.26" y2="96.52" width="0.1524" layer="91"/>
 <pinref part="GND11" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="R1" gate="G$1" pin="1"/>
+<wire x1="12.7" y1="22.86" x2="12.7" y2="20.32" width="0.1524" layer="91"/>
+<pinref part="GND1" gate="1" pin="GND"/>
+</segment>
+<segment>
+<wire x1="30.48" y1="22.86" x2="30.48" y2="20.32" width="0.1524" layer="91"/>
+<pinref part="R3" gate="G$1" pin="1"/>
+<pinref part="GND2" gate="1" pin="GND"/>
+</segment>
+<segment>
+<wire x1="48.26" y1="22.86" x2="48.26" y2="20.32" width="0.1524" layer="91"/>
+<pinref part="R5" gate="G$1" pin="1"/>
+<pinref part="GND3" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="J4" gate="G$1" pin="GND"/>
+<wire x1="33.02" y1="93.98" x2="35.56" y2="93.98" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="93.98" x2="35.56" y2="91.44" width="0.1524" layer="91"/>
+<pinref part="GND4" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="J3" gate="G$1" pin="GND"/>
+<wire x1="68.58" y1="93.98" x2="71.12" y2="93.98" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="93.98" x2="71.12" y2="91.44" width="0.1524" layer="91"/>
+<pinref part="GND5" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="J2" gate="G$1" pin="GND"/>
+<wire x1="101.6" y1="93.98" x2="104.14" y2="93.98" width="0.1524" layer="91"/>
+<wire x1="104.14" y1="93.98" x2="104.14" y2="91.44" width="0.1524" layer="91"/>
+<pinref part="GND6" gate="1" pin="GND"/>
+</segment>
+<segment>
+<wire x1="154.94" y1="124.46" x2="154.94" y2="121.92" width="0.1524" layer="91"/>
+<pinref part="C4" gate="G$1" pin="2"/>
+<pinref part="GND7" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="!INT" class="0">
