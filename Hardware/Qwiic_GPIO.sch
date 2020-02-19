@@ -8631,14 +8631,18 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="JP6" library="SparkFun" deviceset="FIDUCIAL" device="1X2" value="FIDUCIAL1X2"/>
 <part name="SUPPLY4" library="SparkFun-PowerSymbols" deviceset="3.3V" device=""/>
 <part name="SUPPLY5" library="SparkFun-PowerSymbols" deviceset="3.3V" device=""/>
-<part name="J2" library="SparkX" deviceset="I2C_STANDARD" device="JS-1MM" value="SMD"/>
+<part name="J2" library="SparkX" deviceset="I2C_STANDARD" device="JS-1MM" value="SMD">
+<attribute name="PROD_ID" value="CONN-13694"/>
+</part>
 <part name="SUPPLY7" library="SparkFun-PowerSymbols" deviceset="3.3V" device=""/>
 <part name="J3" library="SparkX" deviceset="I2C_STANDARD" device="_NO_SILK" value="PTH"/>
 <part name="FRAME1" library="SparkFun-Aesthetics" deviceset="FRAME-LETTER" device=""/>
 <part name="U$2" library="SparkX" deviceset="SPARKX-LOGO" device="3" value="SPARKX-LOGO3"/>
 <part name="C4" library="SparkFun-Capacitors" deviceset="0.1UF" device="-0603-25V-(+80/-20%)" value="0.1uF"/>
 <part name="SUPPLY8" library="SparkFun-PowerSymbols" deviceset="3.3V" device=""/>
-<part name="J4" library="SparkX" deviceset="I2C_STANDARD" device="JS-1MM" value="SMD"/>
+<part name="J4" library="SparkX" deviceset="I2C_STANDARD" device="JS-1MM" value="SMD">
+<attribute name="PROD_ID" value="CONN-13694"/>
+</part>
 <part name="LOGO1" library="SparkFun-Aesthetics" deviceset="OSHW-LOGO" device="MINI"/>
 <part name="U$1" library="SparkX" deviceset="SPARKX-LOGO" device="3" value="SPARKX-LOGO3"/>
 <part name="R2" library="SparkFun-Resistors" deviceset="2.2KOHM" device="-0603-1/10W-1%" value="2.2k"/>
@@ -8664,8 +8668,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="H2" library="SparkFun-Hardware" deviceset="STAND-OFF" device=""/>
 <part name="R6" library="SparkFun-Resistors" deviceset="10KOHM" device="-0603-1/10W-1%" value="10k"/>
 <part name="SUPPLY12" library="SparkFun-PowerSymbols" deviceset="3.3V" device=""/>
-<part name="J5" library="SparkFun-Connectors" deviceset="CONN_04" device="LATCH"/>
-<part name="J6" library="SparkFun-Connectors" deviceset="CONN_04" device="LATCH"/>
+<part name="J5" library="SparkFun-Connectors" deviceset="CONN_04" device="LATCH">
+<attribute name="PROD_ID" value="CON-14722"/>
+</part>
+<part name="J6" library="SparkFun-Connectors" deviceset="CONN_04" device="LATCH">
+<attribute name="PROD_ID" value="CON-14722"/>
+</part>
 <part name="JP8" library="SparkFun-Jumpers" deviceset="JUMPER-SMT_2_NC_TRACE" device="_SILK" package3d_urn="urn:adsk.eagle:package:39281/1"/>
 <part name="GND11" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="JP1" library="SparkFun-Jumpers" deviceset="JUMPER-SMT_2_NC_TRACE" device="_SILK" package3d_urn="urn:adsk.eagle:package:39281/1" value=""/>
@@ -8756,6 +8764,7 @@ When no jumpers are cut</text>
 <instance part="J2" gate="G$1" x="93.98" y="96.52" smashed="yes">
 <attribute name="VALUE" x="88.9" y="91.186" size="1.778" layer="96" font="vector" align="top-left"/>
 <attribute name="NAME" x="88.9" y="104.394" size="1.778" layer="95" font="vector"/>
+<attribute name="PROD_ID" x="93.98" y="96.52" size="1.27" layer="96" display="off"/>
 </instance>
 <instance part="SUPPLY7" gate="G$1" x="71.12" y="104.14" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="71.12" y="106.934" size="1.778" layer="96" rot="MR0" align="bottom-center"/>
@@ -8781,6 +8790,7 @@ When no jumpers are cut</text>
 <instance part="J4" gate="G$1" x="25.4" y="96.52" smashed="yes">
 <attribute name="VALUE" x="20.32" y="91.186" size="1.778" layer="96" font="vector" align="top-left"/>
 <attribute name="NAME" x="20.32" y="104.394" size="1.778" layer="95" font="vector"/>
+<attribute name="PROD_ID" x="25.4" y="96.52" size="1.27" layer="96" display="off"/>
 </instance>
 <instance part="LOGO1" gate="G$1" x="170.18" y="48.26" smashed="yes"/>
 <instance part="U$1" gate="G$1" x="231.14" y="43.18" smashed="yes"/>
