@@ -1,9 +1,9 @@
-SparkFun Qwiic GPIO
+SparkX Qwiic GPIO
 =======================================
 
-[![SparkFun Qwiic GPIO](https://cdn.sparkfun.com/assets/parts/1/5/1/3/9/16406-Qwiic_GPIO-01.jpg)](https://cdn.sparkfun.com/assets/parts/1/5/1/3/9/16406-Qwiic_GPIO-01.jpg)
+[![SparkX Qwiic GPIO](https://cdn.sparkfun.com/assets/parts/1/5/1/3/9/16406-Qwiic_GPIO-01.jpg)](https://cdn.sparkfun.com/assets/parts/1/5/1/3/9/16406-Qwiic_GPIO-01.jpg)
 
-[*SparkFun Qwiic GPIO (SPX-16406)*](https://www.sparkfun.com/products/16406)
+[*SparkX Qwiic GPIO (SPX-16406)*](https://www.sparkfun.com/products/16406)
 
 TCA9534 breakout board with Qwiic connectors and easy-to-use latch terminals; no longer screw wires into place! Use this board to add more GPIO pins to your system.
 
