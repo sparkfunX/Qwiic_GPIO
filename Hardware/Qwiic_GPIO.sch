@@ -9013,7 +9013,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <sheet>
 <plain>
 <text x="170.434" y="11.43" size="2.54" layer="94">Kevin Kuwata</text>
-<text x="237.744" y="7.366" size="2.54" layer="94">X02</text>
+<text x="237.744" y="7.366" size="2.54" layer="94">X03</text>
 <text x="57.912" y="114.046" size="3.81" layer="97" align="center">I C</text>
 <text x="5.08" y="63.5" size="2.54" layer="97">Address Bit Selection
 </text>
